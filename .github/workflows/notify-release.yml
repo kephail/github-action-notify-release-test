@@ -1,0 +1,18 @@
+name: notify-release
+on:
+  workflow_dispatch:
+    branches:
+      - main
+  release:
+    types: [published]
+  schedule:
+    - cron: "30 8 * * *"
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if there's a release pending
+        id: notify
+        uses: nearform/github-action-notify-release@feature/383/add-recommended-semver
+        with:
+          notify-after: "0"
