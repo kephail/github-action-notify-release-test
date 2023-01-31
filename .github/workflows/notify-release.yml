@@ -3,6 +3,10 @@ on:
   workflow_dispatch:
     branches:
       - main
+    inputs:
+      notify-after:
+        description: "The time after which unreleased commits should be considered stale and should notify for a release"
+        required: false
   release:
     types: [published]
   schedule:
