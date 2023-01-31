@@ -14,3 +14,5 @@ jobs:
       - name: Check if there's a release pending
         id: notify
         uses: nearform/github-action-notify-release@feature/383/add-recommended-semver
+        with:
+          notify-after: "0"
