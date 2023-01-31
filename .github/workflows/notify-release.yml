@@ -3,10 +3,6 @@ on:
   workflow_dispatch:
     branches:
       - main
-    inputs:
-      notify-after:
-        description: "The time after which unreleased commits should be considered stale and should notify for a release"
-        required: false
   release:
     types: [published]
   schedule:
@@ -17,6 +13,6 @@ jobs:
     steps:
       - name: Check if there's a release pending
         id: notify
-        uses: nearform/github-action-notify-release@feature/383/add-recommended-semver
+        uses: nearform/github-action-notify-release@main
         with:
           notify-after: "0"
